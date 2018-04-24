@@ -24,6 +24,9 @@ public class JFrameMain extends JFrame {
 	private JPanel contentPane;
 	private JTextField txtIn1;
 	private JTextField txtOut1;
+	private JTextField txtReverseMe;
+	private JButton btnReverse;
+	private JTextField txtOut2;
 
 	/**
 	 * Launch the application.
@@ -88,5 +91,35 @@ public class JFrameMain extends JFrame {
 		btnPalindrome.setFont(new Font("Tahoma", Font.PLAIN, 30));
 		btnPalindrome.setBounds(297, 13, 243, 50);
 		contentPane.add(btnPalindrome);
+		
+		txtReverseMe = new JTextField();
+		txtReverseMe.setText("ReverseMe!");
+		txtReverseMe.setHorizontalAlignment(SwingConstants.CENTER);
+		txtReverseMe.setFont(new Font("Tahoma", Font.PLAIN, 30));
+		txtReverseMe.setColumns(10);
+		txtReverseMe.setBounds(12, 76, 273, 50);
+		contentPane.add(txtReverseMe);
+		
+		btnReverse = new JButton("Reverse!");
+		btnReverse.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				String str = txtReverseMe.getText();
+				String result = Recursion.strReverse();
+				
+			}
+		});
+		btnReverse.setFont(new Font("Tahoma", Font.PLAIN, 30));
+		btnReverse.setBounds(297, 76, 243, 50);
+		contentPane.add(btnReverse);
+		
+		txtOut2 = new JTextField();
+		txtOut2.setText("??");
+		txtOut2.setHorizontalAlignment(SwingConstants.CENTER);
+		txtOut2.setFont(new Font("Tahoma", Font.PLAIN, 30));
+		txtOut2.setEditable(false);
+		txtOut2.setColumns(10);
+		txtOut2.setBounds(552, 76, 273, 50);
+		contentPane.add(txtOut2);
 	}
 }
