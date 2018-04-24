@@ -8,6 +8,8 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.JButton;
 import java.awt.Font;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 /**
  *   file: JFrameMain.java
@@ -69,6 +71,20 @@ public class JFrameMain extends JFrame {
 		contentPane.add(txtOut1);
 		
 		JButton btnPalindrome = new JButton("Palindrome?");
+		btnPalindrome.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				String strWord = txtIn1.getText();
+				
+				// examine the word, display result
+				if(Recursion.isPalindrome( strWord ) )
+					txtOut1.setText("True!");
+				else
+					txtOut1.setText("False!");
+				
+			
+			}
+		});
 		btnPalindrome.setFont(new Font("Tahoma", Font.PLAIN, 30));
 		btnPalindrome.setBounds(297, 13, 243, 50);
 		contentPane.add(btnPalindrome);
